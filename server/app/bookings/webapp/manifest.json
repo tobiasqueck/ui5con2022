@@ -1,0 +1,179 @@
+{
+    "_version": "1.32.0",
+    "sap.app": {
+        "id": "sap.fe.cap.travel",
+        "type": "application",
+        "title": "{{title}}",
+        "description": "{{description}}",
+        "i18n": {
+            "bundleName": "sap.fe.cap.travel.i18n.i18n",
+            "supportedLocales": [
+                "en",
+                "de",
+                "fr"
+            ],
+            "fallbackLocale": "en"
+        },
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "travel/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0",
+                    "annotations": [
+                        "localAnnotations"
+                    ]
+                }
+            },
+            "localAnnotations": {
+                "type": "ODataAnnotation",
+                "uri": "annotations/annotation.xml"
+            }
+        },
+        "offline": false,
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "ui5template.fiorielements.v4.lrop",
+            "version": "1.0.0"
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "travel-inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "travel",
+                    "action": "process",
+                    "title": "Process Travels",
+                    "subTitle": "Process travels",
+                    "icon": "sap-icon://flight"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://flight",
+            "favIcon": "sap-icon://flight",
+            "phone": "sap-icon://flight",
+            "phone@2": "sap-icon://flight",
+            "tablet": "sap-icon://flight",
+            "tablet@2": "sap-icon://flight"
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.102.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.fe.templates": {},
+                "sap.f": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "sap.fe.cap.travel.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            }
+        },
+        "resources": {
+            "css": []
+        },
+        "routing": {
+            "config": {
+                "flexibleColumnLayout": {
+                    "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+                    "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+                },
+                "routerClass": "sap.f.routing.Router"
+            },
+            "routes": [
+                {
+                    "name": "BookedFlightsMain",
+                    "pattern": ":?query:",
+                    "target": [
+                        "BookedFlightsMain"
+                    ]
+                },
+                {
+                    "name": "AirlineObjectPage",
+                    "pattern": "Airline({AirlineKey}):?query:",
+                    "target": [
+                        "BookedFlightsMain",
+                        "AirlineObjectPage"
+                    ]
+                }
+            ],
+            "targets": {
+                "BookedFlightsMain": {
+                    "type": "Component",
+                    "id": "BookedFlightsMain",
+                    "name": "sap.fe.core.fpm",
+                    "options": {
+                        "settings": {
+                            "viewName": "sap.fe.cap.travel.ext.main.Main",
+                            "entitySet": "BookedFlights",
+                            "navigation": {
+                                "Airline": {
+                                    "detail": {
+                                        "route": "AirlineObjectPage"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "controlAggregation": "beginColumnPages",
+                    "contextPattern": ""
+                },
+                "AirlineObjectPage": {
+                    "type": "Component",
+                    "id": "AirlineObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "entitySet": "Airline",
+                            "editableHeaderContent": false,
+                            "navigation": {}
+                        }
+                    },
+                    "controlAggregation": "midColumnPages",
+                    "contextPattern": "/Airline({AirlineKey})"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+            "type": "XML",
+            "async": true,
+            "id": "appRootView"
+        }
+    }
+}
