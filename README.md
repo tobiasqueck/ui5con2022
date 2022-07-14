@@ -7,6 +7,8 @@ This repository contains the demo script and example service used at UI5Con 2022
 ## Target Application
 ![target app](./wireframes.png)
 
+At the end of running through the demo script, you should have an app like [../demo-result/ui5con.demo.travel](../demo-result/ui5con.demo.travel)
+
 ## Before the Demo
 For the demo, we are using features of the SAP Fiori tools that are not yet fully released. To use the features, you need to an unlisted feature flag. If you are interested in trying this demo script, please reach out to Ashley or Tobias and we share the feature flag.
 
