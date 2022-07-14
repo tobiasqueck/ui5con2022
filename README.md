@@ -124,6 +124,7 @@ The server should be running at http://localhost:4004
 onChartSelectionChanged: function(event) {
     var oData = event.mParameters.data[0].data;
     alert(oData);
+}
 ```
 * open `Main.view` and add the reference to the event handler `selectionChange=".onChartSelectionChanged"`
 * show that the event is handled (in preview)
