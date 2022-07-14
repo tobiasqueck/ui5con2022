@@ -120,7 +120,7 @@ The server should be running at http://localhost:4004
 ```
 * explain that the object page has been created (maybe show that the manifest has been updated) but that we still need to take care of the navigation
 
-# 6: Implement Navigation
+## 6: Implement Navigation
 * open `Main.controller` and add a simple event handler with an alert
 ```
 onChartSelectionChanged: function(event) {
