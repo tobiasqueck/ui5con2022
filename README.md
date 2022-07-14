@@ -1,6 +1,6 @@
 # UI5Con 2022 - Building SAP Fiori apps with flexible open-source modules
 
-This repository contains the demo script and example service used at UI5Con 2022 in session [“Building SAP Fiori apps with flexible open-source modules"](https://openui5.org/ui5con/germany2022/slides/2022-UI5con-1_7-Ashley-Tung-Final.pdf). The demo is intended show the amazing interplay between community projects, open-ux-tools, Fiori tools and Fiori elements FPM.
+This repository contains the demo script and example service used at UI5Con 2022 in session [“Building SAP Fiori apps with flexible open-source modules"](https://openui5.org/ui5con/germany2022/slides/2022-UI5con-1_7-Ashley-Tung-Final.pdf). The demo is intended show the amazing interplay between community projects, open UX tools, SAP Fiori tools and SAP Fiori elements flexible programming model.
 
 **Just to be sure:** this is a demo script, nothing else, no delivered software or promise of future features etc. There is also no guarantee that the demo works. It worked for us at UI5Con and we want it to work for you as well, so if it doesn't work, just open an issue, and we look at it as soon as time permits - no response times guaranteed, but trust us, we care about you.
 
