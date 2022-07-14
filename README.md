@@ -36,6 +36,7 @@ The server should be running at http://localhost:4004
 * let me run the generator
     * the generator should be executed in a folder that is already in a VSCode workspace for simplicity
 ```
+? What do you want to do? Create a new OpenUI5/SAPUI5 project
 ? How do you want to name this project? travel
 ? Which namespace do you want to use? ui5con.demo
 ? Do you want to enable the SAP Fiori elements flexible programming model? Yes
