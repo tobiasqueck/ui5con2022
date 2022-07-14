@@ -36,6 +36,7 @@ The server should be running at http://localhost:4004
 * let me run the generator
     * the generator should be executed in a folder that is already in a VSCode workspace for simplicity
 ```
+? What do you want to do? Create a new OpenUI5/SAPUI5 project
 ? How do you want to name this project? travel
 ? Which namespace do you want to use? ui5con.demo
 ? Do you want to enable the SAP Fiori elements flexible programming model? Yes
@@ -87,7 +88,7 @@ The server should be running at http://localhost:4004
 
 * of course, you could also do this without building blocks but since we have a well annotated OData service here, we can make use of the building block to do less coding even in a freestyle app. In this case, adding the FilterBar building blockgit to the view is all we needed to add agency and travel status as filters in the filter bar because these two fields are specified in the annotations of the entity.
 
-## 4.Explain Application Idea and add Chart
+## 4.Add a Chart
 * show the FPM explorer again and select Chart - FilterBar and explain that while I can copy&paste the snippet again, this time it requires specific annotations that a little more complicated and don't exist in my app yet
 * since I have no idea how to use it, I use guided development
     * open GD on the side
@@ -123,6 +124,7 @@ The server should be running at http://localhost:4004
 onChartSelectionChanged: function(event) {
     var oData = event.mParameters.data[0].data;
     alert(oData);
+}
 ```
 * open `Main.view` and add the reference to the event handler `selectionChange=".onChartSelectionChanged"`
 * show that the event is handled (in preview)
