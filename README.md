@@ -3,7 +3,7 @@
 This repository contains our demo script and example service from UI5Con 2022. The demo is intended show the amazing interplay between community projects, open-ux-tools, Fiori tools and Fiori elements FPM.
 
 ## Target Application
-![target app](./wireframes.jpg)
+![target app](./wireframes.png)
 
 ## Before the Demo
 For the demo, we are using features of the SAP Fiori tools that are not yet fully released. To use the features, you need to an unlisted feature flag. If you are interested in trying this demo script, please reach out to Ashley or Tobias and we share the feature flag.
