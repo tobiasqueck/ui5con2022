@@ -58,7 +58,8 @@
             "libs": {
                 "sap.m": {},
                 "sap.ui.core": {},
-                "sap.fe.templates": {}
+                "sap.fe.templates": {},
+                "sap.f": {}
             }
         },
         "contentDensities": {
@@ -91,12 +92,17 @@
                 {
                     "name": "BookedFlightsMain",
                     "pattern": ":?query:",
-                    "target": "BookedFlightsMain"
+                    "target": [
+                        "BookedFlightsMain"
+                    ]
                 },
                 {
                     "name": "AirlineObjectPage",
                     "pattern": "Airline({AirlineKey}):?query:",
-                    "target": "AirlineObjectPage"
+                    "target": [
+                        "BookedFlightsMain",
+                        "AirlineObjectPage"
+                    ]
                 }
             ],
             "targets": {
@@ -116,7 +122,9 @@
                                 }
                             }
                         }
-                    }
+                    },
+                    "controlAggregation": "beginColumnPages",
+                    "contextPattern": ""
                 },
                 "AirlineObjectPage": {
                     "type": "Component",
@@ -127,9 +135,24 @@
                             "entitySet": "Airline",
                             "navigation": {}
                         }
-                    }
+                    },
+                    "controlAggregation": "midColumnPages",
+                    "contextPattern": "/Airline({AirlineKey})"
                 }
+            },
+            "config": {
+                "flexibleColumnLayout": {
+                    "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+                    "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+                },
+                "routerClass": "sap.f.routing.Router"
             }
+        },
+        "rootView": {
+            "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+            "type": "XML",
+            "async": true,
+            "id": "appRootView"
         }
     }
 }
