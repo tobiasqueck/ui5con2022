@@ -31,7 +31,7 @@ The server should be running at http://localhost:4004
    * `yo easy-ui5 project`
    * subgenerator `generator-ui5-project` has been enhanced with sub-generators to enabled the new Fiori elements flexible programming model
 * while this generator is a community project, it uses modules provided as part of our `open-ux-tools` initiative (https://github.com/SAP/open-ux-tools) that aims to consolidate the core tooling functionality in an open source project that you can inspect, use or contribute to
-* let me run the generator ([generated files](https://github.tools.sap/I821846/ui5con/pull/1/files))
+* let me run the generator
     * the generator should be executed in a folder that is already in a VSCode workspace for simplicity
 ```
 ? How do you want to name this project? travel
