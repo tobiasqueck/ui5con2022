@@ -2,7 +2,7 @@
     <Page title="Main">
         <content>
             <macros:FilterBar id="FilterBar" metaPath="@com.sap.vocabularies.UI.v1.SelectionFields"/>
-            <macros:Chart id="Chart" metaPath="@com.sap.vocabularies.UI.v1.Chart#Airline" filterBar="FilterBar" selectionMode="Single"/>
+            <macros:Chart id="Chart" metaPath="@com.sap.vocabularies.UI.v1.Chart#Airline" filterBar="FilterBar" selectionMode="Single" selectionChange=".onChartSelectionChanged"/>
         </content>
     </Page>
 </mvc:View>

@@ -6,6 +6,14 @@ sap.ui.define(
         'use strict';
 
         return PageController.extend('ui5con.demo.travel.ext.main.Main', {
+
+            onChartSelectionChanged: function(event) {
+                if (event.mParameters.selected) {
+                    var oData = event.mParameters.data[0].data;
+                    var oRouter = this.getExtensionAPI().routing;
+                    oRouter.navigateToRoute('AirlineObjectPage', { AirlineKey: `'${oData.AirlineID}'` });
+                }
+            }
             /**
              * Called when a controller is instantiated and its View controls (if available) are already created.
              * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
