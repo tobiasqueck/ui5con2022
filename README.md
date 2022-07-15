@@ -107,8 +107,9 @@ The server should be running at http://localhost:4004
 * we can now check the preview again and interact with the `FilterBar` to update the data shown in the `Chart`
 
 ## 5. Add ObjectPage 
-* while the main / start page is custom and does not match an SAP Fiori elements page type, from here we need to navigate into a standard FE object page that we can generate with the SAP Fiori tools
-* open Page Map (using the SAP Fiori tools side panel again)
+* while the main / start page is custom and does not match an SAP Fiori elements page type, from here we need to navigate into a standard SAP Fiori elements object page
+* we can generate the configuration with the application modeler extension of the SAP Fiori tools
+* open the page map (using the SAP Fiori tools side panel again)
     * select custom main page
     * add navigation to new object page
     * entity: `Airline`
@@ -140,8 +141,8 @@ if (event.mParameters.selected) {
     oRouter.navigateToRoute('AirlineObjectPage', { AirlineKey: `'${oData.AirlineID}'` });
 }
 ```
-* notes about extension API for routing: built in support for semantic path, making sure that the context are properly handled / propagated, ensuring that the draft / sticky session are dealt with accordingly if they need to be closed
-* we can go back to the preview and test the (hopefully) working navigation
+* we can use the SAP Fiori elements extension API and its routing component to do the navigation (and synching of bindings etc.)
+* we can go back to the preview and test the working navigation
 
 ## 7: Enable FCL
 * open Page Map (using the SAP Fiori tools side panel again)
