@@ -31,11 +31,11 @@ The server should be running at http://localhost:4004
 ## Demo
 
 ### 1. Create an application using the easy-ui5 generator
-* we using the community driven easyUI5 generator to create our initial app
+* we are using the community driven easyUI5 generator to create our initial app
    * `yo easy-ui5 project`
    * subgenerator `generator-ui5-project` has been enhanced with sub-generators to enabled the new Fiori elements flexible programming model
 * while this generator is a community project, it uses modules provided as part of our `open-ux-tools` initiative (https://github.com/SAP/open-ux-tools) that aims to consolidate the core tooling functionality in an open source project that you can inspect, use or contribute to
-* let me run the generator
+* let's run the generator
     * the generator should be executed in a folder that is already in a VSCode workspace for simplicity
 ```
 ? What do you want to do? Create a new OpenUI5/SAPUI5 project
@@ -88,11 +88,11 @@ The server should be running at http://localhost:4004
 </mvc:View>
 ```
 
-* of course, you could also do this without building blocks but since we have a well annotated OData service here, we can make use of the building block to do less coding even in a freestyle app. In this case, adding the FilterBar building blockgit to the view is all we needed to add agency and travel status as filters in the filter bar because these two fields are specified in the annotations of the entity.
+* of course, you could also do this without building blocks but since we have a well annotated OData service here, we can make use of the building block to do less coding even in a freestyle app. In this case, adding the `FilterBar` building blockgit to the view is all we needed to add agency and travel status as filters in the filter bar because these two fields are specified in the annotations of the entity.
 
 ## 4.Add Chart
-* show the FPM explorer again and select Chart - FilterBar and explain that while I can copy&paste the snippet again, this time it requires specific annotations that a little more complicated and don't exist in my app yet
-* since I have no idea how to use it, I use guided development
+* to add a chart, we could use the FPM explorer again, however, for the `FilteBar` we just needed to copy the snippet for the building blocks, for the chart, we would also need to add chart specific annotations
+* as alternative, we are using the guided development extensions of the SAP Fiori tools to "guide" us through the "development" of a chart and its annotions
     * open GD on the side
     * select project
     * scroll to custom page
@@ -102,15 +102,15 @@ The server should be running at http://localhost:4004
     * click on insert snippet and next
     * enter relevant data (view, MyChart, BookedFlights)
     * click on instert snippet
-* show the preview again
+* we can now check the preview again and interact with the `FilterBar` to update the data shown in the `Chart`
 
 ## 5. Add ObjectPage 
-* while the main / start page is custom and does not match an SAP Fiori elements page type, from here we need to navigate into a standard FE object page that we can generate with the Fiori tools
-* open Page Map
+* while the main / start page is custom and does not match an SAP Fiori elements page type, from here we need to navigate into a standard FE object page that we can generate with the SAP Fiori tools
+* open Page Map (using the SAP Fiori tools side panel again)
     * select custom main page
     * add navigation to new object page
     * entity: `Airline`
-* ALTERNATIVE: with `easy-ui5`
+* ALTERNATIVE, we could also use the `easy-ui5` generator again
     * change into the project directory
     * execute `yo easy-ui5 project`
     * select `newfpmpage`
@@ -118,7 +118,7 @@ The server should be running at http://localhost:4004
 ? What type of page should be use for the main page? Object Page
 ? What entity should be used for the new page? Airline
 ```
-* explain that the object page has been created (maybe show that the manifest has been updated) but that we still need to take care of the navigation
+* both will result in exactly the same changes (this can be visualized best by checking the source control tab) because both are based on the same module from the `open-ux-tools` project
 
 ## 6: Implement Navigation
 * open `Main.controller` and add a simple event handler with an alert
@@ -129,7 +129,7 @@ onChartSelectionChanged: function(event) {
 }
 ```
 * open `Main.view` and add the reference to the event handler `selectionChange=".onChartSelectionChanged"`
-* show that the event is handled (in preview)
+* we can now test the initial code in our live preview by clicking on a bar in the chart
 * go back to code and add the actual navigation coding
 ```
 if (event.mParameters.selected) {
@@ -139,9 +139,10 @@ if (event.mParameters.selected) {
 }
 ```
 * notes about extension API for routing: built in support for semantic path, making sure that the context are properly handled / propagated, ensuring that the draft / sticky session are dealt with accordingly if they need to be closed
-* show preview and working navigation
+* we can go back to the preview and test the (hopefully) working navigation
 
 ## 7: Enable FCL
-* open application modeler and add FCL
-* show that it was added to `manifest.json`
-* show the preview again
+* open Page Map (using the SAP Fiori tools side panel again)
+* in the list of application properties we can enable the flexible column layout (FCL)
+* we can check the added configuration in the source control tab when selecting the `manifest.json`
+* we can go back to the preview and test our final application
