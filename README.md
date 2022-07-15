@@ -52,26 +52,28 @@ The server should be running at http://localhost:4004
 ? What is the url of the main service? http://localhost:4004/travel
 ? What entity should be used for the new page? BookedFlights
 ```
-## 2. Show App in Fiori tools and start the preview
+## 2. Show the App in the SAP Fiori tools and start the preview
 * if VSCode is not open yet, and your folder not part of the active workspace, then open VSCode and add the project to the active workspace
 * open the Fiori tools side panel
 * open the application info page
     * the generated project can be used with the SAP Fiori tools because the generator utilizes the `open-ux-tools` modules that are also the core of the SAP Fiori tools
 * start the preview
 
-## 3. Show FPM Explorer and manually add a FilterBar
-* open https://ui5.sap.com/test-resources/sap/fe/core/fpmExplorer/index.html#/buildingBlocks/buildingBlockOverview and explain that we could use annotation driven controls aka FPM building blocks with any FPM enabled app
-    * FPM enabled means: use the FE controller as base and make sure that `sap.fe.macros` is available
-    * More information at https://ui5.sap.com/test-resources/sap/fe/core/fpmExplorer/index.html#/buildingBlocks/guidance/guidanceCustomApps
-* open `FilterBar` and explain what you can do here
+## 3. Show the FPM Explorer and manually add a FilterBar
+* to add a building block the first time, we should look at the SAP Fiori elements for OData v4 flexbible programming model explorer (aka FPM Explorer) at https://ui5.sap.com/test-resources/sap/fe/core/fpmExplorer/index.html#/buildingBlocks/buildingBlockOverview 
+* here we select the `FilterBar` in the left pane to show a working `FilterBar` and its corresponding code and configuration
     * it is possible to change the code on the fly and see the results
-    * remove handlers (which we don't need for today's app) and show that it still renders in FPM
+    * we remove the event handlers (which we don't need for today's app) and can see that the building block still renders correctly
 * copy the `FilterBar` snippet
+* Note:
+    * building blocks can only be used in FPM enabled apps, i.e. apps that use the the Fiori elements controllers and component as well as load the `sap.fe` libs
+    * More information at https://ui5.sap.com/test-resources/sap/fe/core/fpmExplorer/index.html#/buildingBlocks/guidance/guidanceCustomApps
+
 ```
 <macros:FilterBar metaPath="@com.sap.vocabularies.UI.v1.SelectionFields#SF1" id="FilterBar" />
 ```
 * open `MainView` in VSCode and paste it
-* remove qualifier (which we don't need ) and add `xmlns:macros="sap.fe.macros"` to the root element
+* finally, we need to remove the qualifier (which we don't need have in our servuce) and add `xmlns:macros="sap.fe.macros"` to the root element
 ```
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
     xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ui5con.demo.travel.ext.main.Main" 
