@@ -30,7 +30,7 @@ The server should be running at http://localhost:4004
 
 ## Demo
 
-### 1. Create an application using the easy-ui5 generator
+### 1. Create application using easy-ui5 generator
 * we are using the community driven easyUI5 generator to create our initial app
    * `yo easy-ui5 project`
    * subgenerator `generator-ui5-project` has been enhanced with sub-generators to enabled the new Fiori elements flexible programming model
@@ -52,14 +52,14 @@ The server should be running at http://localhost:4004
 ? What is the url of the main service? http://localhost:4004/travel
 ? What entity should be used for the new page? BookedFlights
 ```
-## 2. Show the App in the SAP Fiori tools and start the preview
+## 2. Show App in SAP Fiori tools and preview
 * if VSCode is not open yet, and your folder not part of the active workspace, then open VSCode and add the project to the active workspace
 * open the Fiori tools side panel
 * open the application info page
     * the generated project can be used with the SAP Fiori tools because the generator utilizes the `open-ux-tools` modules that are also the core of the SAP Fiori tools
 * start the preview
 
-## 3. Show the FPM Explorer and manually add a FilterBar
+## 3. Show FPM Explorer and add FilterBar
 * to add a building block the first time, we should look at the SAP Fiori elements for OData v4 flexbible programming model explorer (aka FPM Explorer) at https://ui5.sap.com/test-resources/sap/fe/core/fpmExplorer/index.html#/buildingBlocks/buildingBlockOverview 
 * here we select the `FilterBar` in the left pane to show a working `FilterBar` and its corresponding code and configuration
     * it is possible to change the code on the fly and see the results
@@ -90,7 +90,7 @@ The server should be running at http://localhost:4004
 </mvc:View>
 ```
 
-* of course, you could also do this without building blocks but since we have a well annotated OData service here, we can make use of the building block to do less coding even in a freestyle app. In this case, adding the `FilterBar` building blockgit to the view is all we needed to add agency and travel status as filters in the filter bar because these two fields are specified in the annotations of the entity.
+* of course, we could also do this without building blocks but since we have a well annotated OData service here, we can make use of the building block to do less coding even in a freestyle app. In this case, adding the `FilterBar` building blockgit to the view is all we needed to add agency and travel status as filters in the filter bar because these two fields are specified in the annotations of the entity.
 
 ## 4.Add Chart
 * to add a chart, we could use the FPM explorer again, however, for the `FilteBar` we just needed to copy the snippet for the building blocks, for the chart, we would also need to add chart specific annotations
