@@ -92,7 +92,7 @@ The server should be running at http://localhost:4004
 
 * Of course, we could also do this without building blocks but since we have a well-annotated OData service here, we can make use of the building block to do less coding even in a freestyle app. In this case, adding the `FilterBar` building block to the view is all we need to add agency and travel status as filters in the filter bar because these two fields are specified in the annotations of the entity.
 
-## 4.Add Chart
+## 4. Add Chart
 * To add a chart, we could use the FPM explorer again; however, for the `FilterBar` we just needed to copy the snippet for the building blocks. For the chart, we would also need to add chart-specific annotations.
 * As an alternative, we are using the guided development extensions of the SAP Fiori tools to "guide" us through the "development" of a chart and its annotions
     * Open GD on the side
@@ -119,6 +119,7 @@ The server should be running at http://localhost:4004
     * Select `newfpmpage`
 ```
 ? What type of page should be use for the main page? Object Page
+? From what page do you want to navigate? BookedFlightsMain
 ? What entity should be used for the new page? Airline
 ```
 * Both will result in exactly the same changes (this can be visualized best by checking the source control tab) because both are based on the same module from the `open-ux-tools` project
