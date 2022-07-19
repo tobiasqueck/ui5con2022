@@ -100,7 +100,7 @@ The server should be running at http://localhost:4004
     * Scroll to the custom page section
     * Select Add a Chart Building Block guide
     * Click on Start Guide
-    * Fill the form (Entity Type: BookedFlights, any qualifier/title/description, Chart Type: Column, Measures Property: CountFlights)
+    * Fill the form (Entity Type: BookedFlights, any qualifier/title/description, Chart Type: Column, Measures Property: CountFlights, Dimension Property: AirlineID)
     * Click on Insert Snippet and Next
     * Enter relevant data (view, MyChart, Entity Type: BookedFlights)
     * Click on Insert Snippet
