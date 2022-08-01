@@ -121,6 +121,7 @@ The server should be running at http://localhost:4004
 ? What type of page should be use for the main page? Object Page
 ? From what page do you want to navigate? BookedFlightsMain
 ? What entity should be used for the new page? Airline
+? Overwrite uimodule/webapp/manifest.json? overwrite
 ```
 * Both will result in exactly the same changes (this can be visualized best by checking the source control tab) because both are based on the same module from the `open-ux-tools` project
 
