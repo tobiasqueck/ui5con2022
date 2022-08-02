@@ -10,7 +10,7 @@ This repository contains the demo script and example service used at UI5Con 2022
 At the end of running through the demo script, you should have an app like [../demo-result/ui5con.demo.travel](../demo-result/ui5con.demo.travel)
 
 ## Before the Demo
-For this demo, we are using features of the SAP Fiori tools that are not yet fully released. To use the features, you need to use an unlisted feature flag. If you are interested in trying this demo script, please reach out to Ashley or Tobias and we will share the feature flag.
+**For this demo, we are using features of the SAP Fiori tools that are not yet fully released. To use the features, you need to use an unlisted feature flag. If you are interested in trying this demo script, please reach out to Ashley or Tobias and we will share the feature flag.**
 
 We are using the `easy-ui5-generator` and `yo`, therefore both need to be globally installed.
 ```
