@@ -73,7 +73,7 @@ The server should be running at http://localhost:4004
 <macros:FilterBar metaPath="@com.sap.vocabularies.UI.v1.SelectionFields#SF1" id="FilterBar" />
 ```
 * Open `MainView` in VSCode and paste the code above
-* Finally, we need to remove the qualifier (which we don't need to have in our service) and add `xmlns:macros="sap.fe.macros"` to the root element
+* We need to remove the qualifier (which we don't need to have in our service) and add `xmlns:macros="sap.fe.macros"` to the root element
 ```
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
     xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ui5con.demo.travel.ext.main.Main" 
@@ -105,6 +105,14 @@ The server should be running at http://localhost:4004
     * Enter relevant data (view, MyChart, Entity Type: BookedFlights)
     * Click on Insert Snippet
 * We can now check the preview again and interact with the `FilterBar` to update the data shown in the `Chart`
+* Note: there seems to be bug when changing the filter after the `FilterBar` is tied to the `Chart` that disables too much of the screen. To work around it, just wrap both building blocks in a `VBox` e.g. 
+
+```xml
+<VBox fitContainer="true" alignItems="Stretch" alignContent="Stretch" justifyContent="Start">
+	<macros:FilterBar ... />
+	<macros:Chart ... />
+</VBox>
+```
 
 ## 5. Add ObjectPage 
 * While the main / start page is custom and does not match an SAP Fiori elements page type, from here we need to navigate into a standard SAP Fiori elements object page
