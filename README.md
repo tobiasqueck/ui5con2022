@@ -74,19 +74,18 @@ The server should be running at http://localhost:4004
 ```
 * Open `MainView` in VSCode and paste the code above
 * We need to remove the qualifier (which we don't need to have in our service) and add `xmlns:macros="sap.fe.macros"` to the root element
-```
+```xml
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
     xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ui5con.demo.travel.ext.main.Main" 
     xmlns:macros="sap.fe.macros">
-    <Page title="Main">
-        <content>
-            <macros:FilterBar
+	<Page title="Main">
+		<content>
+			<macros:FilterBar
 				metaPath="@com.sap.vocabularies.UI.v1.SelectionFields#SF1"
 				id="FilterBar"
-				
 			/>
-        </content>
-    </Page>
+		</content>
+	</Page>
 </mvc:View>
 ```
 
