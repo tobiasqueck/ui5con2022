@@ -1,23 +1,12 @@
-import Controller from 'sap/fe/core/PageController';
-import ExtensionAPI from 'sap/fe/core/ExtensionAPI';
-import Routing from "sap/fe/core/controllerextensions/Routing";
+import PageController from 'sap/fe/core/PageController';
 import UI5Event from 'sap/ui/base/Event';
-
-/**
- * Required definition of extension API getter until it is fixed in the sap.fe types.
- */
-interface ExtensionAccess {
-    getExtensionAPI(): ExtensionAPI & {
-        routing: Routing;
-    };
-}
 
 /**
  * @namespace ui5con.demo.ts.travel.ext.main.Main.controller
  */
-export default class Main extends Controller {
+export default class Main extends PageController {
 
-    public onChartSelectionChanged(this: ExtensionAccess, event: UI5Event) {
+    public onChartSelectionChanged(event: UI5Event) {
         if (event.getParameter('selected')) {
             const data = event.getParameter('data')[0].data;
             const router = this.getExtensionAPI().routing;
